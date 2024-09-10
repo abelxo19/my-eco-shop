@@ -6,6 +6,8 @@ import Arrival from '@/components/arrival/arrival'
 import Commit from '../components/commit/commit';
 import Bought from '@/components/bought/bought'
 import Subscribe from '@/components/subscribe/subscribe';
+import Footer from '@/components/footer/footer'
+
 export default function Home() {
   return (
     <div>
@@ -17,6 +19,7 @@ export default function Home() {
       <Commit/>
       <Bought/>
       <Subscribe/>
+      <Footer/>
     </div>
   );
 }
