@@ -5,9 +5,9 @@ import A1 from '@/assets/arrival/image 989.png'
 import A2 from '@/assets/arrival/image 990.png'
 import A3 from '@/assets/arrival/image 991.png'
 import A4 from '@/assets/arrival/image 992.png'
-import A5 from '@/assets/arrival/image 995.png'
-import A6 from '@/assets/arrival/image 996.png'
-import A7 from '@/assets/arrival/image 997.png'
+import A5 from '@/assets/arrival/image 995 (1).png'
+import A6 from '@/assets/arrival/image 996 (1).png'
+import A7 from '@/assets/arrival/image 997 (1).png'
 import Image from "next/image";
 
 const Arrival = () => {
@@ -42,7 +42,7 @@ const Arrival = () => {
   };
 
   return (
-    <div className="mx-8 pt-10">
+    <div className="mx-8 pt-10 pb-16">
       <div className="flex justify-between">
         <div>
           <h1 className="font-libre-baskerville text-[40px] font-bold">
@@ -84,7 +84,7 @@ const Arrival = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-[25%] flex-shrink-0 p-4 bg-gray-100 rounded-lg shadow-md"
+              className="w-[25%] p-4 rounded-lg"
             >
               <Image src={card.img} alt={card.title} className="mb-4" />
               <h3 className="font-bold text-lg">{card.title}</h3>
@@ -92,6 +92,9 @@ const Arrival = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="pt-2 flex justify-center items-center">
+      <button className="text-sm bg-[#658C4A] rounded-full px-3 py-1 tracking-tight text-white hover:text-[#658C4A] hover:bg-transparent">See More</button>
       </div>
     </div>
   );

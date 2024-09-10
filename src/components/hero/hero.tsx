@@ -9,7 +9,7 @@ const hero = () => {
      <span className="block text-[18px] text-[#666666]"> 
      begin your path to a healthy you right now.</span>
      <div className="ml-24 pt-5">
-     <button className="text-[20px] bg-[#658C4A] rounded-full px-4 py-2 tracking-tight text-white hover:text-[#658C4A] hover:bg-transparent">Learn More</button>
+     <button className="text-sm bg-[#658C4A] rounded-full px-4 py-2 tracking-tight text-white hover:text-[#658C4A] hover:bg-transparent">Learn More</button>
      </div>
     </div>
     <div className="w-1/2">

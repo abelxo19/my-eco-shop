@@ -39,6 +39,7 @@ const navbar = () => {
             <li className="text-[14px] font-semibold tracking-tighter text-[#333333] hover:bg-[#658C4A] hover:text-white"><Link href='#'>Accesories</Link></li>
         </ul>
        </div>
+       <hr className="border-[#658C4A]/75"></hr>
     </div>
   )
 }

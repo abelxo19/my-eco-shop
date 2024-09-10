@@ -6,7 +6,7 @@ import W4 from '@/assets/image 980.png'
 
 const wanted = () => {
   return (
-    <div className="bg-[#658C4A] pt-10">
+    <div className="bg-[#658C4A] pt-10 pb-14">
       <div>
         <h1 className="font-libre-baskerville font-bold text-[48px] text-white text-center">Our Most Wanted Products</h1>
         <p className="text-sm text-[#E6E6E6] text-center">Good for environment, good for you</p>
