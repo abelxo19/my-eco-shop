@@ -6,7 +6,7 @@ const subscribe = () => {
     <div>
        <div>
         <div className='relative'>
-          <div className='absolute rounded-3xl bg-white mt-[265px] ml-11 px-5 py-10 w-[500px]'>
+          <div className='hidden md:block absolute rounded-3xl bg-white lg:mt-[265px] lg:ml-11 lg:px-5 lg:py-10 lg:w-[500px]'>
             <h1 className='text-[18px] text-[#333333] font-semibold'>Subscribe to our newsletter</h1>
             <p className="text-gray-500 text-[18px] pt-2">Be the first to know about exclusive offers, eco-tips, and new arrivals!</p>
             <button className="absolute mt-[17.5px] ml-[341px] px-6 py-2 bg-[#658C4A] rounded-full text-white font-semibold hover:bg-white hover:text-[#658C4A]">Subscribe</button>              

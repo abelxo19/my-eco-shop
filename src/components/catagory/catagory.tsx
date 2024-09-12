@@ -7,9 +7,9 @@ import C5 from '@/assets/image 1003.png'
 
 const catagory = () => {
   return (
-    <div className="grid grid-cols-6 py-16 mx-8 gap-4">
+    <div className="grid grid-cols-1 place-items-center lg:grid-cols-6 py-16 mx-8 gap-4">
       <div className="">
-        <h1 className="font-bold text-[40px] text-[#658C4A]">Category for you</h1>
+        <h1 className="font-bold text-2xl lg:text-[40px] text-[#658C4A]">Category for you</h1>
       </div>
       <div className="relative">
       <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Clothing</span>

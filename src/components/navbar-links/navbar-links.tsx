@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
+import { Menu } from 'lucide-react';
 
 const NavbarClient = () => {
   const pathname = usePathname();
@@ -15,8 +16,8 @@ const NavbarClient = () => {
   ];
 
   return (
-    <div className="py-1 mt-[-45px]">
-      <ul className="flex justify-center items-center gap-6">
+    <div className="py-1 md:mt-[-45px]">
+      <ul className="hidden md:flex md:justify-center md:items-center md:gap-6">
         {navItems.map((item) => (
           <li key={item.name}>
             <Link

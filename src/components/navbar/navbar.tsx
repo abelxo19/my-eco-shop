@@ -16,7 +16,7 @@ const navbar = async() => {
   return (
     <div>
        <div className="flex justify-center items-center bg-[#658C4A] py-2">
-       <h1 className="font-semibold text-white text-[16px] tracking-tight">Free Shipping with minimum purchase Rp250.000</h1>
+       <h1 className="font-semibold text-white text-xs md:text-sm lg:text-[16px] tracking-tight">Free Shipping with minimum purchase Rp250.000</h1>
        <ArrowRight className="ml-2 w-4 text-white"/>
        </div>
        <div className="py-3 mx-12 flex justify-between">

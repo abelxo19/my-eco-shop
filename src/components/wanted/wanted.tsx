@@ -10,10 +10,10 @@ const wanted = () => {
   return (
     <div className="bg-[#658C4A] pt-10 pb-14">
       <div>
-        <h1 className="font-libre-baskerville font-bold text-[48px] text-white text-center">Our Most Wanted Products</h1>
-        <p className="text-sm text-[#E6E6E6] text-center">Good for environment, good for you</p>
+        <h1 className="font-libre-baskerville text-xl font-semibold lg:font-bold lg:text-[48px] text-white text-center">Our Most Wanted Products</h1>
+        <p className="text-xs lg:text-sm text-[#E6E6E6] text-center">Good for environment, good for you</p>
       </div>
-      <div className="grid grid-cols-4 gap-4 mx-8 pt-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mx-8 pt-6">
         <motion.div className=""  whileHover={{
          x: 0,
          y: 0,
