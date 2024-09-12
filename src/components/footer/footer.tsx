@@ -1,9 +1,11 @@
 import Image from "next/image"
 import logo from '@/assets/eco.png'
-import bg3 from '@/assets/footer/footer1.png'
+
+
 const footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-gray-100 dark:bg-gray-900">
+     <hr  className=""/>   
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between mx-8">
             <div className="mb-6 md:mb-0">
@@ -16,13 +18,13 @@ const footer = () => {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Eco Shop</h2>
                     <ul className="text-gray-500 dark:text-gray-400 font-medium">
                         <li className="mb-4">
-                            <a href="https://flowbite.com/" className="hover:underline">About Us</a>
+                            <a href="/aboutus" className="hover:underline">About Us</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" className="hover:underline">Contact Us</a>
+                            <a href="/contactus" className="hover:underline">Contact Us</a>
                         </li>
                         <li className="mt-4">
-                            <a href="https://tailwindcss.com/" className="hover:underline">FAQs</a>
+                            <a href="/faqs" className="hover:underline">FAQs</a>
                         </li>
                     </ul>
                 </div>

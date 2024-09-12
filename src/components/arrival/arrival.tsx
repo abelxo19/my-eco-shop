@@ -9,6 +9,7 @@ import A5 from '@/assets/arrival/image 995 (1).png';
 import A6 from '@/assets/arrival/image 996 (1).png';
 import A7 from '@/assets/arrival/image 997 (1).png';
 import Image from "next/image";
+import Link from "next/link";
 
 const Arrival = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Track current slide position
@@ -94,9 +95,11 @@ const Arrival = () => {
         </div>
       </div>
       <div className="pt-2 flex justify-center items-center">
+        <Link href='/new' >
         <button className="text-sm bg-[#658C4A] rounded-full px-3 py-1 tracking-tight text-white hover:text-[#658C4A] hover:bg-transparent">
           See More
         </button>
+        </Link>
       </div>
     </div>
   );
