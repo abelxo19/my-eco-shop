@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between mx-6 lg:mx-12 mt-10 lg:mt-16">
+    <div className="flex flex-col lg:flex-row justify-between mx-6 lg:mx-12 mt-10 lg:mt-10">
       <motion.div
         className="w-full lg:w-[50%] mt-8 lg:mt-16 text-center lg:text-left"
         initial={{ opacity: 0 }}

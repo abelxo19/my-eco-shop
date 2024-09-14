@@ -15,13 +15,13 @@ const Arrival = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Track current slide position
 
   const cards = [
-    { img: A1, title: "Lollygagger Recycled Lounge Chair", description: "Rp699.900" },
-    { img: A2, title: "Lollygagger Recycled Lounge Chair", description: "Rp999.900" },
-    { img: A3, title: "Nisswa Recycled Loveseat", description: "Rp1.399.900" },
-    { img: A4, title: "Lollygagger Recycled Outdoor Chaise", description: "Rp1.199.900" },
-    { img: A5, title: "Recycled Cubby Bench", description: "Rp1.159.900" },
-    { img: A6, title: "Fresh Air Recycled Table", description: "Rp999.000" },
-    { img: A7, title: "Fresh Air Recycled Table", description: "Rp999.000" },
+    { img: A1, title: " Recycled Lounge Chair", description: "99,900 br" },
+    { img: A2, title: " Recycled Lounge Chair", description: "19,900 br" },
+    { img: A3, title: "Nisswa Loveseat", description: "399,900 br" },
+    { img: A4, title: "Recycled Outdoor Chaise", description: "199,900 br" },
+    { img: A5, title: "Cubby Bench", description: "159,900 br" },
+    { img: A6, title: "Fresh Air Table", description: "99,000 br" },
+    { img: A7, title: "Fresh Air Table", description: "99,000 br" },
   ];
 
   const visibleCards = 4; // Show 4 cards at a time
@@ -88,8 +88,8 @@ const Arrival = () => {
               className="w-[25%] p-4 rounded-lg"
             >
               <Image src={card.img} alt={card.title} className="mb-4" />
-              <h3 className="font-semibold text-base">{card.title}</h3>
-              <p className="text-[#658C4A] font-semibold pt-1">{card.description}</p>
+              <h3 className="font-semibold text-xs lg:text-base">{card.title}</h3>
+              <p className="text-[#658C4A] font-semibold pt-1 text-xs lg:text-sm">{card.description}</p>
             </div>
           ))}
         </div>

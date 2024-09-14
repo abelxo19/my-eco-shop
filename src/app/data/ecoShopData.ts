@@ -51,7 +51,7 @@ const ecoShopData = {
     ],
     clothing: [
       {
-        id: 1,
+        id: 11,
         name: "Organic Cotton Hoodie",
         price: 49.99,
         imageUrl: "/images/hoodie.jpg",
@@ -59,7 +59,7 @@ const ecoShopData = {
         rating: 5,
       },
       {
-        id: 2,
+        id: 21,
         name: "Bamboo Fiber Socks",
         price: 12.99,
         imageUrl: "/images/socks.jpg",
@@ -67,7 +67,7 @@ const ecoShopData = {
         rating: 5,
       },
       {
-        id: 3,
+        id: 32,
         name: "Recycled Polyester Jacket",
         price: 89.99,
         imageUrl: "/images/jacket.jpg",
@@ -75,7 +75,7 @@ const ecoShopData = {
         rating: 4,
       },
       {
-        id: 4,
+        id: 43,
         name: "Organic Cotton Trousers",
         price: 55.99,
         imageUrl: "/images/trousers.jpg",
@@ -83,7 +83,7 @@ const ecoShopData = {
         rating: 5,
       },
       {
-        id: 5,
+        id: 54,
         name: "Hemp Beanie",
         price: 29.99,
         imageUrl: "/images/beanie.jpg",
@@ -91,7 +91,7 @@ const ecoShopData = {
         rating: 3,
       },
       {
-        id: 6,
+        id: 66,
         name: "Organic Cotton Dress",
         price: 69.99,
         imageUrl: "/images/dress.jpg",
@@ -101,7 +101,7 @@ const ecoShopData = {
     ],
     bedding: [
       {
-        id: 1,
+        id: 12,
         name: "Organic Cotton Bed Sheet",
         price: 79.99,
         imageUrl: "/images/bed-sheet.jpg",
@@ -109,7 +109,7 @@ const ecoShopData = {
         rating: 4,
       },
       {
-        id: 2,
+        id: 23,
         name: "Bamboo Pillowcase Set",
         price: 29.99,
         imageUrl: "/images/pillowcase.jpg",
@@ -117,7 +117,7 @@ const ecoShopData = {
         rating: 5,
       },
       {
-        id: 3,
+        id: 34,
         name: "Hemp Duvet Cover",
         price: 99.99,
         imageUrl: "/images/duvet-cover.jpg",
@@ -126,7 +126,7 @@ const ecoShopData = {
 
       },
       {
-        id: 4,
+        id: 45,
         name: "Recycled Down Comforter",
         price: 149.99,
         star:34,
@@ -135,7 +135,7 @@ const ecoShopData = {
         rating: 5,
       },
       {
-        id: 5,
+        id: 56,
         name: "Organic Linen Throw Blanket",
         price: 59.99,
         imageUrl: "/images/throw-blanket.jpg",
@@ -143,7 +143,7 @@ const ecoShopData = {
         rating: 3,
       },
       {
-        id: 6,
+        id: 67,
         name: "Recycled Cotton Mattress Topper",
         price: 129.99,
         imageUrl: "/images/mattress-topper.jpg",

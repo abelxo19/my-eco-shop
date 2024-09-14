@@ -6,6 +6,8 @@ import { buttonVariants } from '@/components/ui/button'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
+import  Wish from '../../../public/favorite.png'
+import { X } from 'lucide-react';
 
 const navbar = async() => {
   const { getUser } = getKindeServerSession()
@@ -15,13 +17,9 @@ const navbar = async() => {
 
   return (
     <div>
-       <div className="flex justify-center items-center bg-[#658C4A] py-2">
-       <h1 className="font-semibold text-white text-xs md:text-sm lg:text-[16px] tracking-tight">Free Shipping with minimum purchase Rp250.000</h1>
-       <ArrowRight className="ml-2 w-4 text-white"/>
-       </div>
-       <div className="py-3 mx-12 flex justify-between">
+        <div className="py-3 mx-12 flex justify-between">
         <Link href='/'>
-        <Image src={Eco_logo} width={68} height={35} alt="logo_image" className="" />
+        <Image src={Eco_logo} alt="logo_image" className="w-10 h-7 lg:h-8 lg:w-14" />
         </Link>
        
         <div className="flex justify-end ">
@@ -50,6 +48,11 @@ const navbar = async() => {
                   className="ml-3"
                 >
                   <ShoppingCart className="h-7" />
+                </Link>
+                <Link href='/wishlist'
+                  className="ml-5"
+                >
+                  <Image src={Wish} alt="no" className="h-8 w-9" />
                 </Link>
               </>
             ) : (

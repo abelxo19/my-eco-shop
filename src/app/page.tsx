@@ -8,6 +8,7 @@ import Bought from '@/components/bought/bought';
 import Subscribe from '@/components/subscribe/subscribe';
 import Head from 'next/head';
 import Notification from '@/components/notification';
+import Topbar from '@/components/top-navbar'
 import { useEffect, useState } from 'react';
 
 export default function Home() {

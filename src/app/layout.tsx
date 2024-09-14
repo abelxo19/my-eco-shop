@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navbar from '@/components/navbar/navbar'
-import Footer from '@/components/footer/footer'
+import Navbar from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
 import NavbarClient from "@/components/navbar-links/navbar-links";
+import Topbar from '@/components/top-navbar/top-navbar'
 import "./globals.css";
+import { WishlistProvider } from '@/context/WishlistContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -28,14 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >  <header className="sticky top-0 z-20 bg-white">
-         <Navbar/>
-         <NavbarClient/>
-         </header>
-        {children}
-         <Footer/>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <WishlistProvider>
+          <header className="sticky top-0 z-20 bg-white">
+            <Topbar />
+            <Navbar />
+            <NavbarClient />
+          </header>
+          {children}
+          <Footer />
+        </WishlistProvider>
       </body>
     </html>
   );

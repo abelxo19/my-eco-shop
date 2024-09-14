@@ -3,8 +3,7 @@ import React, { useContext } from 'react';
 import ecoShopData from '../data/ecoShopData';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Star, Heart } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowRight, Star } from 'lucide-react';
 import { WishlistContext } from '../../context/WishlistContext';
 
 interface Product {
@@ -15,30 +14,37 @@ interface Product {
   rating: number;
 }
 
-const NewProductsPage: React.FC = () => {
-  const text = "Bedding Collection";
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
+const WishlistPage: React.FC = () => {
+  const { wishlist } = useContext(WishlistContext);
+
+  // Filter products that are in the wishlist from each category
+  const wishlistProducts = ecoShopData.new.filter((product: Product) =>
+    wishlist.includes(product.id)
+  );
+  const wishlistProducts_2 = ecoShopData.clothing.filter((product: Product) =>
+    wishlist.includes(product.id)
+  );
+  const wishlistProducts_3 = ecoShopData.bedding.filter((product: Product) =>
+    wishlist.includes(product.id)
+  );
+
+  // Combine all wishlist products from different categories into one array
+  const combinedWishlistProducts = [
+    ...wishlistProducts,
+    ...wishlistProducts_2,
+    ...wishlistProducts_3,
+  ];
+
+  // If the combined wishlistProducts array is empty, show a message
+  if (combinedWishlistProducts.length === 0) {
+    return <p className="text-center mt-8">Your wishlist is empty.</p>;
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className='flex justify-center pb-8'>
-        {text.split("").map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0 }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: index * 0.1,
-            }} className='text-xl md:text-3xl lg:text-5xl'
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </div>      
+      <h1 className="text-3xl font-bold mb-8 text-center">My Wishlist</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ecoShopData.bedding.map((product: Product) => (
+        {combinedWishlistProducts.map((product: Product) => (
           <div key={product.id} className="bg-white rounded-lg shadow-md h-[26rem] relative">
             <Image
               src={product.imageUrl}
@@ -47,7 +53,6 @@ const NewProductsPage: React.FC = () => {
               height={400}
               className="mb-4 h-2/3 w-full"
             />
-
             <h2 className="text-xl text-center font-semibold mt-2">{product.name}</h2>
             <p className="text-gray-600 text-center pt-1">${product.price}</p>
 
@@ -61,18 +66,6 @@ const NewProductsPage: React.FC = () => {
                 />
               ))}
             </div>
-
-            <button
-              onClick={() => isInWishlist(product.id) ? removeFromWishlist(product.id) : addToWishlist(product.id)}
-              className="absolute top-4 right-4 p-2 rounded-full focus:outline-none hover:bg-gray-100"
-              aria-label="Add to wishlist"
-            >
-              <Heart
-                className={`h-6 w-6 ${
-                  isInWishlist(product.id) ? 'fill-red-500 text-red-500 ' : 'text-orange-600'
-                }`}
-              />
-            </button>
 
             <Link
               href="/configure/upload"
@@ -88,4 +81,4 @@ const NewProductsPage: React.FC = () => {
   );
 };
 
-export default NewProductsPage;
+export default WishlistPage;

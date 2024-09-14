@@ -9,8 +9,8 @@ const footer = () => {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between mx-8">
             <div className="mb-6 md:mb-0">
-                <a href="https://flowbite.com/" className="flex items-center">
-                    <Image src={logo} className="h-8 me-3" alt="FlowBite Logo" />
+                <a href="/" className="flex items-center">
+                    <Image src={logo} className="w-10 h-7 lg:h-8 lg:w-14 me-3" alt="FlowBite Logo" />
                 </a>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
