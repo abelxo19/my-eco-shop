@@ -2,11 +2,12 @@
 import React, { useContext } from 'react';
 import ecoShopData from '../data/ecoShopData';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight, Star, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { WishlistContext } from '../../context/WishlistContext';
+import axios from 'axios';
 
+// Define the Product interface
 interface Product {
   id: number;
   name: string;
@@ -18,6 +19,18 @@ interface Product {
 const NewProductsPage: React.FC = () => {
   const text = "New Arrivals";
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
+
+  // Function to handle payment initiation
+  const handlePayment = async (product: Product) => {
+    try {
+      const response = await axios.post('/api/payment', { product });
+  
+      // Redirect to Stripe Checkout page
+      window.location.href = response.data.checkout_url;
+    } catch (error) {
+      console.error('Payment initiation failed', error);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -74,13 +87,13 @@ const NewProductsPage: React.FC = () => {
               />
             </button>
 
-            <Link
-              href="/configure/upload"
+            <button
+              onClick={() => handlePayment(product)}
               className="bg-[#658C4A] text-white w-16 py-1 pl-2 rounded flex ml-[42%] items-center gap-1 mt-2 hover:font-semibold"
             >
               Buy
               <ArrowRight className="h-4 w-5" />
-            </Link>
+            </button>
           </div>
         ))}
       </div>

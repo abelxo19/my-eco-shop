@@ -24,10 +24,10 @@ const page = () => {
                 {letter}
               </motion.span>
             ))}
-    <div className="flex justify-center items-center mt-10 mx-36">
+    <div className="flex justify-center items-center mt-10 md:mx-9 lg:mx-16">
       <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger className="lg:font-medium lg:text-3xl lg:h-24">What is EcoShop and how does it work?</AccordionTrigger>
+        <AccordionTrigger className="lg:font-medium lg:text-3xl lg:h-24 ">What is EcoShop and how does it work?</AccordionTrigger>
         <AccordionContent>
           Yes. It adheres to the WAI-ARIA design pattern.
         </AccordionContent>

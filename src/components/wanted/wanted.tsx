@@ -52,7 +52,7 @@ const wanted = () => {
          y: 0,
          scale: 1.09,
          rotate: 0,
-                 }}>
+                 }} className="">
           <Image src={W4} alt="" className="rounded-md" />
           <h1 className="text-sm text-white">Meliora | Eco Laundry Powder</h1>
           <p className="font-semibold text-xs text-white pt-1">159,900 br</p>

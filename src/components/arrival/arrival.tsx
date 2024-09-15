@@ -25,7 +25,7 @@ const Arrival = () => {
   ];
 
   const visibleCards = 4; // Show 4 cards at a time
-  const cardWidth = 25; // Each card takes up 25% of the total width
+  const cardWidth = 15; // Each card takes up 25% of the total width
   const maxIndex = Math.max(0, cards.length - visibleCards); // Ensure maxIndex is not negative
 
   // Move to the next set of cards
@@ -45,18 +45,18 @@ const Arrival = () => {
   return (
     <div className="mx-8 pt-10 pb-16">
       <div className="flex justify-between">
-        <div>
-          <h1 className="font-libre-baskerville text-[40px] font-bold">
-            New Arrival
+        <div className="ml-16">
+          <h1 className="font-libre-baskerville text-base font-semibold lg:text-[40px] lg:font-bold">
+            New <span className="bg-[#658C4A] text-white px-1">Arrival</span>
           </h1>
-          <p className="text-xs text-[#666666]">
+          <p className="text-[10px] mt-3 lg:text-sm lg:mt-7 text-[#666666]">
             Be the first to have the first-class product
           </p>
         </div>
         <div className="flex gap-3 items-center">
           <div
             onClick={handleMoveLeft}
-            className={`bg-gray-300 rounded-full p-1 px-2 flex items-center justify-center cursor-pointer ${
+            className={`hidden bg-gray-300 rounded-full p-1 px-2 md:flex lg:items-center lg:justify-center cursor-pointer ${
               currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
@@ -64,7 +64,7 @@ const Arrival = () => {
           </div>
           <div
             onClick={handleMoveRight}
-            className={`hover:bg-[#658C4A] rounded-full p-1 px-2 flex items-center justify-center cursor-pointer ${
+            className={`hidden hover:bg-[#658C4A] rounded-full p-1 px-2 md:flex md:items-center md:justify-center cursor-pointer ${
               currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
@@ -74,9 +74,9 @@ const Arrival = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="relative overflow-hidden w-full mt-8">
+      <div className="relative overflow-hidden w-full">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex flex-col ml-16 md:flex-row md:transition-transform md:duration-500 md:ease-in-out"
           style={{
             transform: `translateX(-${currentIndex * cardWidth}%)`,
             width: `${cards.length * 25}%`, // Adjust width according to the number of cards
@@ -85,7 +85,7 @@ const Arrival = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-[25%] p-4 rounded-lg"
+              className="w-[25%] p-2 rounded-lg"
             >
               <Image src={card.img} alt={card.title} className="mb-4" />
               <h3 className="font-semibold text-xs lg:text-base">{card.title}</h3>
