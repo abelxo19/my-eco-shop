@@ -1,4 +1,3 @@
-"use server";
 import { NextApiRequest, NextApiResponse } from 'next';
 import { stripe } from '../../../lib/stripe';
 

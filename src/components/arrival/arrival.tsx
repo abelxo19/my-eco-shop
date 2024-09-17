@@ -76,7 +76,7 @@ const Arrival = () => {
       {/* Cards Section */}
       <div className="relative overflow-hidden w-full">
         <div
-          className="flex flex-col ml-16 md:flex-row md:transition-transform md:duration-500 md:ease-in-out"
+          className="flex flex-col ml-16 md:flex-row md:transition-transform md:duration-500 md:ease-in-out outline-none"
           style={{
             transform: `translateX(-${currentIndex * cardWidth}%)`,
             width: `${cards.length * 25}%`, // Adjust width according to the number of cards

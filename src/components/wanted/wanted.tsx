@@ -13,7 +13,7 @@ const wanted = () => {
         <h1 className="font-libre-baskerville text-xl font-semibold lg:font-bold lg:text-[48px] tracking-wide text-black/80 text-center pb-3">Our Most Wanted <span className="text-white bg-[#658C4A] px-1">Products</span></h1>
         <p className="text-xs lg:text-sm text-gray-600 text-center pt-2">Good for environment, good for you</p>
       </div>
-      <div className="grid grid-cols-1 pl-10 place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-4 mx-8 pt-6">
+      <div className="grid grid-cols-2 pl-10 place-items-baseline lg:grid-cols-4 gap-4 mx-8 pt-6">
         <motion.div className=""  whileHover={{
          x: 0,
          y: 0,

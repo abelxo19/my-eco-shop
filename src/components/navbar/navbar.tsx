@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react"
-import { Search } from 'lucide-react';
 import Eco_logo from '@/assets/eco.png'
 import Image from "next/image"
 import { buttonVariants } from '@/components/ui/button'
@@ -7,7 +5,12 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
 import  Wish from '../../../public/favorite.png'
-import { X } from 'lucide-react';
+
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
 
 const navbar = async() => {
   const { getUser } = getKindeServerSession()
@@ -17,7 +20,7 @@ const navbar = async() => {
 
   return (
     <div>
-        <div className="py-3 mx-12 flex justify-between">
+        <div className="py-3 mx-12 flex justify-between items-center mr-20 antialiased">
         <Link href='/'>
         <Image src={Eco_logo} alt="logo_image" className="w-10 h-7 lg:h-8 lg:w-14" />
         </Link>
@@ -54,6 +57,10 @@ const navbar = async() => {
                 >
                   <Image src={Wish} alt="no" className="h-8 w-9" />
                 </Link>
+                <Avatar className='h-9 ml-5 items-center md:mt-[-5px] md:mr-[-30px]'>
+                 <AvatarImage src='/founder.jpg'/>
+                 <AvatarFallback>AA</AvatarFallback>
+                </Avatar>
               </>
             ) : (
               <>

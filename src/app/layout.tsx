@@ -6,6 +6,7 @@ import NavbarClient from "@/components/navbar-links/navbar-links";
 import Topbar from '@/components/top-navbar/top-navbar'
 import "./globals.css";
 import { WishlistProvider } from '@/context/WishlistContext';
+import { SearchProvider } from '../context/SearchContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SearchProvider>
         <WishlistProvider>
           <header className="sticky top-0 z-20 bg-white">
             <Topbar />
@@ -41,6 +43,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </WishlistProvider>
+        </SearchProvider>
       </body>
     </html>
   );

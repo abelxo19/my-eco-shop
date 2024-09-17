@@ -1,11 +1,12 @@
 "use client";
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ecoShopData from '../data/ecoShopData';
 import Image from 'next/image';
 import { ArrowRight, Star, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { WishlistContext } from '../../context/WishlistContext';
 import axios from 'axios';
+import SearchInput from '../../components/searchIcon/search'; // Ensure this is the correct path
 
 // Define the Product interface
 interface Product {
@@ -19,22 +20,27 @@ interface Product {
 const NewProductsPage: React.FC = () => {
   const text = "New Arrivals";
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   // Function to handle payment initiation
   const handlePayment = async (product: Product) => {
     try {
-      const response = await axios.post('/api/payment', { product });
-  
-      // Redirect to Stripe Checkout page
+      const response = await axios.post('/api/payment/route', { product });
       window.location.href = response.data.checkout_url;
     } catch (error) {
       console.error('Payment initiation failed', error);
     }
   };
 
+  // Filter products based on search term
+  const filteredProducts = ecoShopData.new.filter((product: Product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className='flex justify-center pb-8'>
+    <div className="container mx-auto px-4 pb-8">
+      <div className=' mb-8 pb-8'>
+        <div className='flex justify-start items-center'>
         {text.split("").map((letter, index) => (
           <motion.span
             key={index}
@@ -44,14 +50,18 @@ const NewProductsPage: React.FC = () => {
               duration: 3,
               repeat: Infinity,
               delay: index * 0.1,
-            }} className='text-xl md:text-3xl lg:text-5xl'
+            }} className='text-xl md:text-3xl lg:text-4xl'
           >
             {letter}
           </motion.span>
         ))}
+        </div>
+         <div className='mr-6 flex justify-end items-center lg:mt-[-45px]'>
+           <SearchInput setSearchTerm={setSearchTerm} />
+         </div>
       </div>      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ecoShopData.new.map((product: Product) => (
+        {filteredProducts.map((product: Product) => (
           <div key={product.id} className="bg-white rounded-lg shadow-md h-[26rem] relative">
             <Image
               src={product.imageUrl}

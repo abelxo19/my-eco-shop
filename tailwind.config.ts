@@ -60,6 +60,19 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
+			'animation': {
+            '0%': { transform: 'scale(0)', opacity: '1' },
+            '50%': { transform: 'scale(1.5)', opacity: '0.5' },
+            '100%': { transform: 'scale(3)', opacity: '0' },
+        },
+			animate:{
+              '0%,10%,100%':{
+				width:'0%'
+			  },
+			  '70%,80%,90%':{
+				width:'100%'
+			  },
+			},
   			'accordion-down': {
   				from: {
   					height: '0'
@@ -78,6 +91,8 @@ const config: Config = {
   			}
   		},
   		animation: {
+			animate:'animate 6s linear infinite',
+			'neon':'2s linear infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}

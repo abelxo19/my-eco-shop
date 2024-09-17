@@ -1,6 +1,5 @@
 "use client";
 import Image from 'next/image';
-import ecoShopLogo from '@/assets/eco.png'
 import About from'../../../public/about/about.png'
 import About_2 from'../../../public/about/about_2.png'
 import Founder from '../../../public/founder.jpg'
@@ -23,17 +22,17 @@ Our community of eco-conscious individuals continues to grow, and together.
       <section className="mb-8 bg-white pt-6">
         <div className="">
           <div className="p-3 flex flex-col items-center">
-          <h2 className="text-3xl font-semibold mb-4 text-center ">Founder</h2>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-center ">Founder</h2>
           <motion.div whileHover={{
             x: 0,
             y: 0,
             scale: 1.15,
             rotate: 0,
           }}>
-            <Image src={Founder} alt="Team Member Name" width={350} height={450} className="rounded-lg mb-4" />
+            <Image src={Founder} alt="Team Member Name" className="rounded-lg mb-4 w-44 h-36 md:w-[300px] md:h-[250px]" />
           </motion.div>
-            <h3 className="text-xl font-semibold mb-2">Abel Atkelet</h3>
-            <p className="text-gray-600">Founder & CEO</p>
+            <h3 className="text-sm md:text-lg lg:text-xl font-semibold mb-2">Abel Atkelet</h3>
+            <p className="text-gray-600 text-sm">Founder & CEO</p>
           </div>
         </div>
       </section>
