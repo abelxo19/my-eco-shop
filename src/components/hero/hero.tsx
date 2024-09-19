@@ -3,13 +3,12 @@ import Image from "next/image";
 import Img1 from '../../../public/hero_img.png';
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Leaf } from "lucide-react"
-
+import Curve from '../../../public/curve.png'
 const Hero = () => {
   return (
-      <div className="relative antialiased">
+      <div className="">
       {/* Background Image for Small Screens */}
-      <div className="absolute inset-0 -z-10 bg-[url('/hero_img.png')] bg-cover bg-center md:hidden mt-[-90px] pb-5" style={{ opacity: 0.4 }}></div>
+      <div className="absolute inset-0 -z-10 bg-[url('/hero_img.png')] bg-cover bg-center md:hidden pb-5" style={{ opacity: 0.4, height:425 }}></div>
       <div className="flex flex-col lg:flex-row justify-between mx-6 lg:mx-12 mt-10 lg:mt-10">
       {/* Content Section */}
       <motion.div
@@ -18,6 +17,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        <Image src={Curve} alt="no" className="hidden lg:block absolute mt-[-55px]" />
         <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 pb-4 lg:mb-4">
           Healthy Cutlery,
         </h1>
@@ -46,14 +46,14 @@ const Hero = () => {
 
       {/* Image for Larger Screens */}
       <motion.div
-        className="hidden lg:flex w-full lg:w-[47%] pt-6 justify-center"
+        className="hidden lg:flex w-full lg:w-[45%] pt-6 justify-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         whileHover={{ scale: 1.05, rotate: 2 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Image src={Img1} alt="no-img" className="h-[200px] md:h-[300px] lg:h-[390px]" />
+        <Image src={Img1} alt="no-img" className="h-[200px] md:h-[300px] lg:h-[390px] shadow-md " />
       </motion.div>
     </div>
     </div>

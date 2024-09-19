@@ -38,7 +38,7 @@ const NewProductsPage: React.FC = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 pb-8">
+    <div className="container mx-auto px-4 pb-8 mt-8">
       <div className=' mb-8 pb-8'>
         <div className='flex justify-start items-center'>
         {text.split("").map((letter, index) => (

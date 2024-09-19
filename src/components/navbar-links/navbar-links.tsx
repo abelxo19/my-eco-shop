@@ -23,7 +23,7 @@ const NavbarClient = () => {
   };
 
   return (
-    <div className="py-5 md:mt-[-60px] antialiased">
+    <div className="pt-5 md:mt-[-60px]">
       <ul className="hidden md:flex md:justify-center md:items-center md:gap-6">
         {navItems.map((item) => (
           <li key={item.name}>
@@ -42,7 +42,7 @@ const NavbarClient = () => {
       </ul>
       <div className='hidden lg:flex justify-center'>
       </div>
-      <div className="flex justify-end mt-[-45px] md:hidden mr-11">
+      <div className="flex justify-end mt-[-60px] md:hidden mr-11">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -72,9 +72,6 @@ const NavbarClient = () => {
           ))}
         </ul> 
       </motion.div>
-      <div className='relative'>
-      <hr className="border-[#658C4A]/75 mt-3 shadow-md"></hr>
-      </div>
     </div>
   );
 };

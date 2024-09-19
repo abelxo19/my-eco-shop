@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SearchProvider>
         <WishlistProvider>
-          <header className="sticky top-0 z-20 bg-white">
+          <header className="sticky top-0 z-20  backdrop-blur-sm">
             <Topbar />
             <Navbar />
             <NavbarClient />

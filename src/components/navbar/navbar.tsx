@@ -5,7 +5,14 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
 import  Wish from '../../../public/favorite.png'
-
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import {
   Avatar,
   AvatarFallback,
@@ -19,7 +26,7 @@ const navbar = async() => {
   const isAdmin = user?.email === process.env.ADMIN_EMAIL
 
   return (
-    <div>
+    <div className='shadow-sm'>
         <div className="py-3 mx-12 flex justify-between items-center mr-20 antialiased">
         <Link href='/'>
         <Image src={Eco_logo} alt="logo_image" className="w-10 h-7 lg:h-8 lg:w-14" />
@@ -39,28 +46,43 @@ const navbar = async() => {
                   </Link>
                   
                 ) : null}
-                <Link
-                  href='/api/auth/logout'
-                  className={buttonVariants({
-                    size: 'sm',
-                    variant: 'ghost',
-                  })}>
-                  Sign out
-                </Link>
-                <Link href='/cart'
-                  className="ml-3"
-                >
-                  <ShoppingCart className="h-7" />
-                </Link>
-                <Link href='/wishlist'
-                  className="ml-5"
-                >
-                  <Image src={Wish} alt="no" className="h-8 w-9" />
-                </Link>
+                <DropdownMenu>
+                <DropdownMenuTrigger asChild> 
                 <Avatar className='h-9 ml-5 items-center md:mt-[-5px] md:mr-[-30px]'>
                  <AvatarImage src='/founder.jpg'/>
                  <AvatarFallback>AA</AvatarFallback>
                 </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                      Profile
+               </DropdownMenuItem>
+                <DropdownMenuItem>
+                <Link href='/wishlist'
+                  className=""
+                >
+                 Wishlist
+                </Link>
+               </DropdownMenuItem>
+               <DropdownMenuItem>
+               <Link href='/cart'
+                  className=""
+                >
+                 Cart
+                </Link>
+               </DropdownMenuItem>
+               <DropdownMenuSeparator />
+               <DropdownMenuItem>
+               <Link
+                  href='/api/auth/logout'
+                >
+                    Log out
+                </Link>
+               </DropdownMenuItem>
+               </DropdownMenuContent>
+             </DropdownMenu>
               </>
             ) : (
               <>

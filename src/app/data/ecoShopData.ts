@@ -1,4 +1,20 @@
-const ecoShopData = {
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+  description: string;
+  rating: number;
+};
+
+type EcoShopData = {
+  new: Product[];
+  clothing: Product[];
+  bedding: Product[];
+  furniture: Product[];
+  accessories: Product[];
+};
+const ecoShopData : EcoShopData ={
     new: [
       {
         id: 1,
@@ -129,7 +145,6 @@ const ecoShopData = {
         id: 45,
         name: "Recycled Down Comforter",
         price: 149.99,
-        star:34,
         imageUrl: "/images/comforter.jpg",
         description: "Comforter filled with recycled down.",
         rating: 5,
