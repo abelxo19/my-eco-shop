@@ -6,9 +6,8 @@ import { ArrowRight, Star, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { WishlistContext } from '../../context/WishlistContext';
 import axios from 'axios';
-import SearchInput from '../../components/searchIcon/search'; // Ensure this is the correct path
+import SearchInput from '../../components/searchIcon/search'; 
 
-// Define the Product interface
 interface Product {
   id: number;
   name: string;
@@ -22,7 +21,6 @@ const NewProductsPage: React.FC = () => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  // Function to handle payment initiation
   const handlePayment = async (product: Product) => {
     try {
       const response = await axios.post('/api/payment/route', { product });
@@ -32,7 +30,7 @@ const NewProductsPage: React.FC = () => {
     }
   };
 
-  // Filter products based on search term
+ 
   const filteredProducts = ecoShopData.new.filter((product: Product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );

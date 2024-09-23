@@ -1,7 +1,3 @@
-import W1 from '@/assets/why us/Vector.png'
-import W2 from '@/assets/why us/Vector (1).png'
-import W3 from '@/assets/why us/Vector (2).png'
-import W4 from '@/assets/why us/Vector (3).png'
 import Ship from'@/assets/why us/ship_2.png'
 import S from'@/assets/why us/statify.png'
 import Eco from '@/assets/why us/eco_f.png'
