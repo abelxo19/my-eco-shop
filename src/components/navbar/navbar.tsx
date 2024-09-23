@@ -5,6 +5,7 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import Link from "next/link";
 import { ShoppingCart } from 'lucide-react';
 import  Wish from '../../../public/favorite.png'
+
 import {
   DropdownMenu,
   DropdownMenuContent,

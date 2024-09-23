@@ -6,7 +6,11 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const NavbarClient = () => {
+interface NavbarClientProps {
+  isAuthenticated: boolean;
+}
+
+const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,6 +26,8 @@ const NavbarClient = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const isHomeOrNew = pathname === '/' || pathname === '/new'; // Check if on Home or New
+
   return (
     <div className="pt-5 md:mt-[-60px]">
       <ul className="hidden md:flex md:justify-center md:items-center md:gap-6">
@@ -30,9 +36,11 @@ const NavbarClient = () => {
             <Link
               href={item.path}
               className={`lg:text-[14px] font-semibold tracking-tighter px-1 py-1 ${
-                pathname === item.path
+                isAuthenticated && item.path === '/new' && isHomeOrNew // Only activate "NEW!" if user is authenticated
                   ? 'bg-[#658C4A] text-white'
-                  : 'text-[#333333] hover:bg-[#658C4A] hover:text-white'
+                  : pathname === item.path
+                  ? 'bg-[#658C4A] text-white' // Highlight other links based on pathname
+                  : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' // Inactive state
               }`}
             >
               {item.name}
@@ -40,8 +48,7 @@ const NavbarClient = () => {
           </li>
         ))}
       </ul>
-      <div className='hidden lg:flex justify-center'>
-      </div>
+      <div className='hidden lg:flex justify-center'></div>
       <div className="flex justify-end mt-[-60px] md:hidden mr-11">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -59,11 +66,13 @@ const NavbarClient = () => {
             <li key={item.name}>
               <Link
                 href={item.path}
-                onClick={toggleMenu} 
+                onClick={toggleMenu}
                 className={`block text-sm font-semibold tracking-tighter px-3 py-2 ${
-                  pathname === item.path
+                  isAuthenticated && item.path === '/new' && isHomeOrNew // Only activate "NEW!" if user is authenticated
                     ? 'bg-[#658C4A] text-white'
-                    : 'text-[#333333] hover:bg-[#658C4A] hover:text-white'
+                    : pathname === item.path
+                    ? 'bg-[#658C4A] text-white' // Highlight other links based on pathname
+                    : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' // Inactive state
                 }`}
               >
                 {item.name}

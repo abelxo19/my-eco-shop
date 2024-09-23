@@ -9,6 +9,7 @@ interface NotificationProps {
 }
 
 const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
+  
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
    

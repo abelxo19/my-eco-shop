@@ -28,21 +28,7 @@ const footer = () => {
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">SUPPORT</h2>
-                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                        <li className="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" className="hover:underline">Returns</a>
-                        </li>
-                        <li>
-                            <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Shopping</a>
-                        </li>
-                        <li className="mt-4">
-                            <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Affilates</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
+                <div className="">
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                     <ul className="text-gray-500 dark:text-gray-400 font-medium">
                         <li className="mb-4">
