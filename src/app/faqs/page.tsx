@@ -29,14 +29,14 @@ const page = () => {
       <AccordionItem value="item-1">
         <AccordionTrigger className="lg:font-medium lg:text-3xl lg:h-24 ">What is EcoShop and how does it work?</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+        EcoShop is an online marketplace dedicated to offering eco-friendly and sustainable products. Our goal is to provide environmentally 
+        conscious consumers with a wide range of high-quality products that help reduce environmental impact.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
         <AccordionTrigger className="lg:font-medium lg:text-3xl lg:h-24">what are the products?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+        EcoShop offers a variety of environmentally friendly products across multiple categories:bedding,clothing and furniture also others .
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
