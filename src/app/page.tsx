@@ -21,7 +21,7 @@ export default async function Home() {
         {user ? (
           <New />
         ) : (
-          <>
+          <>           
             <Hero />
             <Catagory />
             <Wanted />

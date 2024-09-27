@@ -9,6 +9,7 @@ import { WishlistProvider } from '@/context/WishlistContext';
 import { SearchProvider } from '../context/SearchContext';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -33,7 +34,7 @@ export default async function RootLayout({
 }>) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
+  
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

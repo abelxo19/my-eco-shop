@@ -12,7 +12,6 @@ const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
   
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-   
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 flex justify-between bg-white shadow-lg rounded-lg h-auto max-h-80">
         <div className="mr-4">

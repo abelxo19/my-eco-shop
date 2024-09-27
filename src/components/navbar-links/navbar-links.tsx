@@ -19,7 +19,6 @@ const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
     { name: 'Clothing', path: '/clothing' },
     { name: 'Bedding', path: '/bedding' },
     { name: 'Furniture', path: '/furniture' },
-    { name: 'Accessories', path: '/accessories' },
   ];
 
   const toggleMenu = () => {
@@ -27,7 +26,7 @@ const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
   };
 
   const isHomeOrNew = pathname === '/' || pathname === '/new'; // Check if on Home or New
-
+  
   return (
     <div className="pt-5 md:mt-[-60px]">
       <ul className="hidden md:flex md:justify-center md:items-center md:gap-6">
