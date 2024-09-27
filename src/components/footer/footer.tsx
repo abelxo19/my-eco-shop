@@ -1,7 +1,6 @@
 import Image from "next/image"
 import logo from '@/assets/eco.png'
 
-
 const footer = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-900">
@@ -32,7 +31,7 @@ const footer = () => {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                     <ul className="text-gray-500 dark:text-gray-400 font-medium">
                         <li className="mb-4">
-                            <a href="#" className="hover:underline">Privacy Policy</a>
+                            <a href="/privacypolicy" className="hover:underline">Privacy Policy</a>
                         </li>
                         <li>
                             <a href="#" className="hover:underline">Terms & Conditions</a>
