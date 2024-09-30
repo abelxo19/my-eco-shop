@@ -20,7 +20,7 @@ const NewProductsPage: React.FC = () => {
   const text = "New Arrivals";
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   const [searchTerm, setSearchTerm] = useState<string>('');
-
+  
   const handlePayment = async (product: Product) => {
     try {
       const response = await axios.post('/api/payment/route', { product });
@@ -30,7 +30,6 @@ const NewProductsPage: React.FC = () => {
     }
   };
 
- 
   const filteredProducts = ecoShopData.new.filter((product: Product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -54,7 +53,7 @@ const NewProductsPage: React.FC = () => {
           </motion.span>
         ))}
         </div>
-         <div className='mr-6 flex justify-end items-center lg:mt-[-45px]'>
+         <div className='mr-6 flex justify-end items-center mt-[-30px] lg:mt-[-45px]'>
            <SearchInput setSearchTerm={setSearchTerm} />
          </div>
       </div>      

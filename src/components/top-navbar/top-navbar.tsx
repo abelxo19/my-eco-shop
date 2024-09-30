@@ -16,7 +16,7 @@ const TopNavbar = () => {
         <div className="bg-[#658C4A] ">
           <div className="flex justify-start md:justify-center items-center py-2 pl-12">
             <h1 className="font-semibold text-white text-xs md:text-sm lg:text-[16px] tracking-tight">
-              Free Shipping with minimum purchase Rp250.000
+              Free Shipping with minimum purchase
             </h1>
             <ArrowRight className="ml-2 w-4 text-white hover:text-black/75 " />
           </div>

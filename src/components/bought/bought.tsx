@@ -5,7 +5,7 @@ import Fast from '@/assets/why us/fast.png'
 import Image from 'next/image'
 const bought = () => {
   return (
-    <div className="mx-28 pb-28">
+    <div className="mx-12 md:mx-28 pb-28">
       <div className="p-7 lg:pt-28 lg:pb-9">
         <h1 className="font-semibold lg:font-bold font-libre-baskerville text-lg lg:text-5xl text-center text-[#658C4A]pb-">Why <span className='bg-[#658C4A] text-white px-2 py-1'>Bought</span> From Us?</h1>
       </div>

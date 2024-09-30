@@ -18,28 +18,27 @@ const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
     { name: 'NEW!', path: '/new' },
     { name: 'Clothing', path: '/clothing' },
     { name: 'Bedding', path: '/bedding' },
-    { name: 'Furniture', path: '/furniture' },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isHomeOrNew = pathname === '/' || pathname === '/new'; // Check if on Home or New
+  const isHomeOrNew = pathname === '/' || pathname === '/new'; 
   
   return (
-    <div className="pt-5 md:mt-[-60px]">
+    <div className="pt-5 md:mt-[-60px] relative">
       <ul className="hidden md:flex md:justify-center md:items-center md:gap-6">
         {navItems.map((item) => (
           <li key={item.name}>
             <Link
               href={item.path}
               className={`lg:text-[14px] font-semibold tracking-tighter px-1 py-1 ${
-                isAuthenticated && item.path === '/new' && isHomeOrNew // Only activate "NEW!" if user is authenticated
+                isAuthenticated && item.path === '/new' && isHomeOrNew 
                   ? 'bg-[#658C4A] text-white'
                   : pathname === item.path
-                  ? 'bg-[#658C4A] text-white' // Highlight other links based on pathname
-                  : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' // Inactive state
+                  ? 'bg-[#658C4A] text-white' 
+                  : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' 
               }`}
             >
               {item.name}
@@ -47,7 +46,9 @@ const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
           </li>
         ))}
       </ul>
+
       <div className='hidden lg:flex justify-center'></div>
+
       <div className="flex justify-end mt-[-60px] md:hidden mr-11">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -58,27 +59,27 @@ const NavbarClient = ({ isAuthenticated }: NavbarClientProps) => {
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
         transition={{ duration: 1.15, ease: 'easeInOut' }}
-        className="overflow-hidden md:hidden"
+        className={`overflow-hidden md:hidden absolute top-full left-0 right-0 bg-white z-50`}
       >
-        <ul className="flex flex-col items-center gap-4 mt-4">
+        <ul className="flex flex-col items-center gap-4 mt-4 p-4">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.path}
                 onClick={toggleMenu}
                 className={`block text-sm font-semibold tracking-tighter px-3 py-2 ${
-                  isAuthenticated && item.path === '/new' && isHomeOrNew // Only activate "NEW!" if user is authenticated
+                  isAuthenticated && item.path === '/new' && isHomeOrNew 
                     ? 'bg-[#658C4A] text-white'
                     : pathname === item.path
-                    ? 'bg-[#658C4A] text-white' // Highlight other links based on pathname
-                    : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' // Inactive state
+                    ? 'bg-[#658C4A] text-white' 
+                    : 'text-[#333333] hover:bg-[#658C4A] hover:text-white' 
                 }`}
               >
                 {item.name}
               </Link>
             </li>
           ))}
-        </ul> 
+        </ul>
       </motion.div>
     </div>
   );

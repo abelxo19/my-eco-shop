@@ -46,7 +46,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Image for Larger Screens */}
         <motion.div
           className="hidden lg:flex w-full lg:w-[45%] pt-6 justify-center"
           initial={{ opacity: 0, scale: 0.8 }}

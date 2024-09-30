@@ -17,30 +17,30 @@ const catagory = () => {
     <div className="grid grid-cols-2 place-items-center lg:grid-cols-5 pb-5 mt-8 mx-16 gap-8">
       <div className="relative">
       <Link href='/clothing'>
-      <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Clothing</span>
+      <span className="hidden md:block absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Clothing</span>
       </Link>     
       <Image src={C1} alt="" className="rounded-md" />
       </div>
       <div>
       <Link href='/HomeGoods'>  
-      <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Home Goods</span>
+      <span className="hidden md:block absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Home Goods</span>
       </Link>
       <Image src={C4} alt="" className="rounded-md" />
       </div>
       <div>
       <Link href='/bedding'>  
-      <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Bedding</span>
+      <span className="hidden md:block absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Bedding</span>
       </Link>
       <Image src={C2} alt="" className="rounded-md" />
       </div>
       <div>
       <Link href='/furniture'>  
-      <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Furniture</span>
+      <span className="hidden md:block absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Furniture</span>
       </Link>
       <Image src={C3} alt="" className="rounded-md" />
       </div>
       <div>
-      <span className="absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Accessories</span>
+      <span className="hidden md:block absolute mt-36 ml-9 font-semibold text-xs px-4 py-2 bg-[#333333] rounded-full text-white hover:bg-[#658C4A] hover:text-white">Accessories</span>
       <Image src={C5} alt="" className="rounded-md " />
       </div>
       </div>
