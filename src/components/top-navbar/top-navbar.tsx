@@ -20,7 +20,7 @@ const TopNavbar = () => {
             </h1>
             <ArrowRight className="ml-2 w-4 text-white hover:text-black/75 " />
           </div>
-          <div className="flex justify-end mt-[-30px] pb-1 pr-12">
+          <div className="flex justify-end mt-[-30px] pb-1 pr-8 md:mr-14">
             <X className="text-white w-5 hover:text-black/75 " onClick={handleClose} />
           </div>
         </div>

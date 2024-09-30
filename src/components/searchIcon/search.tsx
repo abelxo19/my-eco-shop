@@ -15,7 +15,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ setSearchTerm }) => {
       if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
         setIsExpanded(false);
         setSearchValue('');
-        setSearchTerm(''); // Clear search term
+        setSearchTerm(''); 
       }
     };
 
@@ -40,7 +40,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ setSearchTerm }) => {
   return (
     <div className="relative flex items-center px-1 py-1 md:px-3 md:py-2 shadow-md rounded-full">
       <Search
-        className="cursor-pointer h-4 w-6 md:h-6 md:w-8 text-[#658C4A]"
+        className="cursor-pointer h-6 w-6 md:h-8 md:w-8 text-[#658C4A]"
         onClick={handleIconClick}
       />
       {isExpanded && (
@@ -49,7 +49,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ setSearchTerm }) => {
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-          className="transition-all duration-300 ease-in-out ml-2 px-6 py-1 rounded-md focus:outline-none w-48"
+          className="transition-all duration-300 ease-in-out ml-2 px-6 py-1 rounded-md focus:outline-none md:w-32 lg:w-48"
           placeholder="Search products..."
           autoFocus
         />
