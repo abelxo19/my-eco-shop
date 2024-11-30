@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, ReactNode } from "react";
 
 // Define the structure of the product and the context state
 interface WishlistContextType {
@@ -18,12 +18,26 @@ export const WishlistContext = createContext<WishlistContextType>({
 });
 
 // Create a provider component
-export const WishlistProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [wishlist, setWishlist] = useState<number[]>(getWishlistFromLocalStorage());
+export const WishlistProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [wishlist, setWishlist] = useState<number[]>([]);
+
+  // Load wishlist from localStorage on the client side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedWishlist = localStorage.getItem("wishlist");
+      if (storedWishlist) {
+        setWishlist(JSON.parse(storedWishlist));
+      }
+    }
+  }, []);
 
   // Save wishlist to localStorage whenever it changes
   useEffect(() => {
-    saveWishlistToLocalStorage(wishlist);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    }
   }, [wishlist]);
 
   const addToWishlist = (id: number) => {
@@ -39,18 +53,10 @@ export const WishlistProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist, isInWishlist }}>
+    <WishlistContext.Provider
+      value={{ wishlist, addToWishlist, removeFromWishlist, isInWishlist }}
+    >
       {children}
     </WishlistContext.Provider>
   );
 };
-
-// Helper functions to manage wishlist in localStorage
-function getWishlistFromLocalStorage(): number[] {
-  const storedWishlist = localStorage.getItem('wishlist');
-  return storedWishlist ? JSON.parse(storedWishlist) : [];
-}
-
-function saveWishlistToLocalStorage(wishlist: number[]) {
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
-}
