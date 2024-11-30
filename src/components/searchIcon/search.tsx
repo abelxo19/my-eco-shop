@@ -38,9 +38,9 @@ const SearchInput: React.FC<SearchInputProps> = ({ setSearchTerm }) => {
   };
 
   return (
-    <div className="relative flex items-center px-1 py-1 md:px-3 md:py-2 shadow-md rounded-full">
+    <div className="relative flex items-center px-3 mr-5 py-1 md:px-3 md:py-4 shadow-md rounded-full">
       <Search
-        className="cursor-pointer h-6 w-6 md:h-8 md:w-8 text-[#658C4A]"
+        className="cursor-pointer h-4 w-6 md:h-6 md:w-8 text-[#658C4A] "
         onClick={handleIconClick}
       />
       {isExpanded && (
